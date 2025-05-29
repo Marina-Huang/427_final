@@ -122,7 +122,7 @@ readme_path = Path("/mnt/data/README.md")
 readme_path.write_text(readme_content)
 readme_path
 ```
-## bservations
+## Observations
 
 - Accuracy remains stable across seeds, suggesting good generalisability.  
 - Runtime is efficient — Spark handles the dataset well in distributed mode.  
