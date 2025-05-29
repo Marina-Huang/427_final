@@ -58,7 +58,7 @@ This will:
 
 ---
 
-## 📊 Output Example
+## Output Example
 
 Example content of `decision_tree_results.csv`:
 
