@@ -20,11 +20,10 @@ Settings:
 Click Connect.
 
 2. SSH Login to ECS Node
-PowerShell: ssh huangjixu@co246a-1.ecs.vuw.ac.nz, 
+PowerShell: ssh (username)@co246a-1.ecs.vuw.ac.nz, 
 type yes to accept the host key, then enter your password.
 
 3. Check or Upload Files
-
 4. Check and Use HDFS
 
 5. Run Your Spark Job
