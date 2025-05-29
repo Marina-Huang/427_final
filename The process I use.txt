@@ -1,0 +1,34 @@
+
+The process I use: 
+
+1. Install and Open Cyberduck (recommend, can drag around files)
+- Download Cyberduck: https://cyberduck.io
+- Open the app and click "Open Connection"
+
+Settings:
+
+-Protocol: SFTP (SSH File Transfer Protocol)
+
+-Server:  greta-pt.ecs.vuw.ac.nz
+
+-Port: 22
+
+-Username: your ECS username
+
+-Password: your ECS password (same as your university login)
+
+Click Connect.
+
+2. SSH Login to ECS Node
+PowerShell: ssh huangjixu@co246a-1.ecs.vuw.ac.nz, 
+type yes to accept the host key, then enter your password.
+
+3. Check or Upload Files
+
+4. Check and Use HDFS
+
+5. Run Your Spark Job
+
+To automate 10 runs:
+- chmod +x run_10_times.sh
+- ./run_10_times.sh
