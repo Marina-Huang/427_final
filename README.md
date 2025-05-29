@@ -15,11 +15,18 @@ This project implements a Decision Tree classifier using PySpark on the KDD data
 
 ## Environment & Dependencies
 
-- **Apache Spark 3.5.1**  
-- **Python 3.x**  
-- PySpark (should be available with Spark)  
-- HDFS (Hadoop) access to input file  
+- Spark 3.5.1
+- Python 3.9+
+- Run on ECS Hadoop/Spark cluster at Victoria University of Wellington
 
+---
+## Dataset
+
+The dataset used is `kdd.data.txt`, uploaded to HDFS:
+```
+hdfs dfs -mkdir -p /user/<your_username>/427_final/input
+hdfs dfs -put kdd.data.txt /user/<your_username>/427_final/input/
+```
 ---
 
 ## Input Data
@@ -60,14 +67,21 @@ This will:
 
 ## Output Example
 
-Example content of `decision_tree_results.csv`:
+The program outputs the accuracy and runtime of the Decision Tree model for each of the 10 runs using different random seeds. Each line of output includes:
+
+Seed value
+
+Training accuracy
+
+Testing accuracy
+
+Time taken for that run (in seconds):
 
 ```
-Seed,Accuracy,Time
-1,0.9447,3.43
-2,0.9453,3.41
-3,0.9440,3.38
-4,0.9449,3.51
+Seed,TrainAccuracy,TestAccuracy,Time
+1,0.9470,0.9455,4.08
+...
+
 ...
 ```
 
@@ -95,7 +109,19 @@ Seed,Accuracy,Time
 | Avg. Runtime   | ~3.45 sec    |
 
 ---
+## Summary Statistics
+After all 10 runs, you can compute summary statistics (min, max, average, std) using a Python script or pandas.
 
+## Notes
+- Ensure Spark and Hadoop are correctly set up on the cluster
+
+- Set executable permissions for .sh files using chmod +x run_10_times.sh
+"""
+```
+readme_path = Path("/mnt/data/README.md")
+readme_path.write_text(readme_content)
+readme_path
+```
 ## bservations
 
 - Accuracy remains stable across seeds, suggesting good generalisability.  
